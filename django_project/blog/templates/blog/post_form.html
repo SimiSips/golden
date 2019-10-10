@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Get Help / Provide Help</legend>
+                {{ form|crispy }}
+                <p>Limit R250 - R2000</p>
+                <p><b>If you enter more than expected, you will not be helped.</b></p>
+            </fieldset>
+            <div class="form-group">
+                <p>You need to provide help before you can recieve help.</p>
+                <p class="text-muted"><b>When someone has helped you, delete your post!</b></p>
+                <button class="btn btn-outline-info" type="submit">Help</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
